@@ -43,6 +43,9 @@ func NewHttpTransport() *http.Transport {
 
 func NewClient() *openai.Client {
 	config := openai.DefaultConfig(DefaultSetting.AuthToken)
+	if DefaultSetting.BaseURL != "" {
+		config.BaseURL = DefaultSetting.BaseURL
+	}
 
 	config.HTTPClient = &http.Client{
 		Transport: NewHttpTransport(),
