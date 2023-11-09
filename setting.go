@@ -20,6 +20,7 @@ var (
 type Default struct {
 	BaseURL         string
 	AuthToken       string
+	Model           string
 	PS1             string
 	UseProxy        bool
 	ProxyUrl        string

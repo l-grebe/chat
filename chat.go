@@ -74,6 +74,7 @@ func (c *Chat) AiResp(qs string) {
 		msgs = c.msgs[len(c.msgs)-LoadContextSize:]
 	}
 	req := openai.ChatCompletionRequest{
+		// Model:    DefaultSetting.Model,
 		Model:    openai.GPT3Dot5Turbo,
 		Messages: msgs,
 		Stream:   true,
